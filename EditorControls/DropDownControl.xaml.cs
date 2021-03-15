@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -33,7 +34,8 @@ namespace TextAdventures.Quest.EditorControls
 
         void m_helper_Initialise()
         {
-            int? width = m_helper.ControlDefinition.Width;
+            DataContext = m_helper.ControlDefinition;
+			int? width = m_helper.ControlDefinition.Width;
             if (width.HasValue)
             {
                 lstDropdown.MinWidth = width.Value;

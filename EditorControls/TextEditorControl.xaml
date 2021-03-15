@@ -17,6 +17,7 @@
             Name="textEditor"
             FontFamily="Consolas, Courier New"
             FontSize="10pt" Text=""
+			AutomationProperties.Name="{Binding Path=Caption}"
             Grid.Row="1" />
     </Grid>
 </UserControl>

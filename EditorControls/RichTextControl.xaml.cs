@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using TextAdventures.Utility.Language;
 
@@ -36,6 +37,7 @@ namespace TextAdventures.Quest.EditorControls
         {
             if (m_initialised) return;
             m_initialised = true;
+			DataContext = m_helper.ControlDefinition;
             m_nullable = m_helper.ControlDefinition.GetBool("nullable");
             if (m_helper.ControlDefinition.GetBool("notextprocessor"))
             {

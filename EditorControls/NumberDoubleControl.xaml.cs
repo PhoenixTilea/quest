@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -29,7 +30,8 @@ namespace TextAdventures.Quest.EditorControls
 
         void m_helper_Initialise()
         {
-            double? minimum = m_helper.ControlDefinition.GetDouble("minimum");
+            DataContext = m_helper.ControlDefinition;
+			double? minimum = m_helper.ControlDefinition.GetDouble("minimum");
             if (minimum.HasValue)
             {
                 ctlNumber.Minimum = minimum;

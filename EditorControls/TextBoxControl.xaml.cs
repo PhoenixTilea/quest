@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -29,7 +30,8 @@ namespace TextAdventures.Quest.EditorControls
 
         void Initialise()
         {
-            m_nullable = m_helper.ControlDefinition.GetBool("nullable");
+            DataContext = m_helper.ControlDefinition;
+			m_nullable = m_helper.ControlDefinition.GetBool("nullable");
             string colour = m_helper.ControlDefinition.GetString("colour");
             if (!string.IsNullOrEmpty(colour))
             {

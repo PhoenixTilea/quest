@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -76,7 +77,8 @@ namespace TextAdventures.Quest.EditorControls
 
         private void Initialise()
         {
-            if (m_useFolding)
+            DataContext = m_helper.ControlDefinition;
+			if (m_useFolding)
             {
                 m_foldingStrategy.UpdateFoldings(m_foldingManager, textEditor.Document);
             }
